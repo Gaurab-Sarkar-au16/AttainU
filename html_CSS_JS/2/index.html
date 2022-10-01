@@ -63,10 +63,63 @@
 </table>
 
 <!-- br tag to break a line -->
-<p>hello my name is wriiten <br> on the class board</p>
+<p>
+  hello my name is wriiten <br />
+  on the class board
+</p>
 
 <!-- input types -->
-<input type="text">
-<input type="number" min="10" max="20">
+<input type="text" />
+<input type="number" min="10" max="20" />
 <!-- min max only works with the arrows in the input field -->
-<input type="color">
+<input type="color" />
+
+<!-- Forms -->
+<form action="http://google.com">
+  <label for="emailId">Email:</label>
+  <input id="emailId" type="email" name="email" />
+
+  <label for="password">Password:</label>
+  <input id="password" type="password" name="pass" />
+  <input type="submit" />
+</form>
+<!-- markup language will never provide you an error, it will provide warning -->
+<!-- this happens because browser tries to guess even if we have wrote wrong html, thats why it doesnot gives error -->
+
+<!-- another type of form writing to skip the for and id attribute -->
+<form action="#">
+  <label>
+    Email:
+    <input type="email" name="email" />
+  </label>
+</form>
+
+<!-- another way to write form -->
+<form action="http://google.com">  
+  <span>
+    <label for="emailId">Email:</label><br>
+    <input id="emailId" type="email" name="email" />
+  </span>
+
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" type="password" name="pass" />
+  </div>
+
+  <input type="submit" />
+</form>
+
+<form action="#">
+  <fieldset>
+    <legend>Login</legend>
+    <div>
+      <label for="emailId">Email:</label><br>
+      <input id="emailId" type="email" name="email" />
+    </div>
+  
+    <div>
+      <label for="password">Password:</label>
+      <input id="password" type="password" name="pass" />
+    </div>
+  </fieldset>
+</form>
