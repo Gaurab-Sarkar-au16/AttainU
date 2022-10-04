@@ -1,0 +1,50 @@
+<form action="#">
+  <fieldset>
+    <div>
+      <label for="emailId">Email:</label><br />
+      <input
+        id="emailId"
+        type="email"
+        name="email"
+        required="true"
+        autocomplete="true"
+      />
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input
+        id="password"
+        type="password"
+        name="pass"
+        required="true"
+        autocomplete="true"
+      />
+    </div>
+  </fieldset>
+
+  <label for="mySelect">Select your fav letter</label>
+  <select name="letter" id="mySelect">
+    <option value="1">A</option>
+    <option value="2">B</option>
+    <option value="3">C</option>
+    <option value="4">D</option>
+  </select>
+</form>
+
+<!-- optional group -->
+<form action="#">
+  <label for="Select">Select from options</label>
+  <select name="letter" id="Select" required>
+    <option value="">Select Your Value</option>
+    <optgroup label="First Set">
+      <option value="1">A</option>
+      <option value="2">B</option>
+    </optgroup>
+    <optgroup label="Second Set">
+      <option value="3">C</option>
+      <option value="4">D</option>
+    </optgroup>
+  </select>
+</form>
+<!-- the required attribte by default value is true, so if true is not typed it will assume its value as true -->
