@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
 <form action="#">
   <fieldset>
     <div>
@@ -35,7 +46,7 @@
 <!-- optional group -->
 <form action="#">
   <label for="Select">Select from options</label>
-  <select name="letter" id="Select" required>
+  <select name="letter" id="Select" required multiple>
     <option value="">Select Your Value</option>
     <optgroup label="First Set">
       <option value="1">A</option>
@@ -46,5 +57,43 @@
       <option value="4">D</option>
     </optgroup>
   </select>
+  <input type="submit" />
+  <input type="reset" />
 </form>
 <!-- the required attribte by default value is true, so if true is not typed it will assume its value as true -->
+<!-- to select muliple options use mltiple tag, sometimes you have to press ctrl button to select mutiple options depending on how the browser s implementing it -->
+
+<!-- Audio and video tag -->
+<h1>video</h1>
+<video controls poster="https://picsum.photos/id/237/200/300">
+  <source src="http://techslides.com/demos/sample-videos/small.webm" />
+  <p>Your browser doesnot support video tag</p>
+</video>
+
+<!-- youtube video wont work with this tag, embed tag is needed -->
+<br>
+
+<!-- open the youtube video and press share, select the embed option there, copy the link and paste it -->
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/KKXNmYoPkx0"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+<br>
+
+<!-- use different formats for support of the browser -->
+<video controls> 
+  <source src=http://techslides.com/demos/sample-videos/small.webm type=video/webm> 
+  <source src=http://techslides.com/demos/sample-videos/small.ogv type=video/ogg> 
+  <source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4>
+  <source src=http://techslides.com/demos/sample-videos/small.3gp type=video/3gp>
+  <p>Your browser doesnot support video tag</p>
+</video>
+
+<audio  controls poster="https://picsum.photos/id/237/200/300" >
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
