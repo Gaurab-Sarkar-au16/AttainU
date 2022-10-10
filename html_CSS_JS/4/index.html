@@ -19,6 +19,24 @@
     span{
       background-color: aqua;
     }
+
+    .div1{
+      width: 200px;
+      height: 6vh;
+      background-color: crimson;
+      /* overflow: hidden; */
+      overflow: scroll;
+    }
+
+    .div2{
+      /* background-color: crimson; */
+      background-color: greenyellow;
+    }
+    .p2{
+      width: 50%;
+      background-color: rgba(0,0,255,0.3);
+      /* background: linear-gradient(90deg, rgba(86,212,85,1) 0%, rgba(221,218,11,1) 37%, rgba(0,212,255,1) 100%); */
+    }
   </style>
   
 </head>
@@ -26,5 +44,17 @@
   <h1 style="background-color: blue;font-size: 12px">Hi this is H1</h1>
 
   <span>This is a span</span>
+
+  <!-- children inheriting poroperties of parent -->
+  <div class="div1">
+    this is my div
+    <p>this is a paragraph</p>
+  </div>
+
+  <div class="div2">
+    <p class="p2">My paragraph</p>
+    <p class="p2">My paragraph</p>
+    <p class="p2">My paragraph</p>
+  </div>
 </body>
 </html>
