@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selectors</title>
+
+  <style>
+    /* tag selector */
+    span{
+      color: green;
+    }
+
+    /* class selector */
+    .firstDiv{
+      color: blue;
+    }
+    .secondDiv{
+      color: red;
+    }
+
+    .btn{
+      background-color: steelblue;
+      border: 2px dashed green;
+    }
+
+    .btn-warning{
+      background-color: yellow;
+      border: none;
+    }
+
+    .btn-danger{
+      background-color: tomato;
+    }
+
+    /* id selector */
+    #uniqueBtn{
+      background: linear-gradient(90deg, red, orange, yellow);
+      /* use of important */
+      color: white !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- multiple class use case -->
+  <button class="btn">Default</button>
+  <button class="btn btn-warning">Warning</button>
+  <button class="btn btn-danger">Danger</button>
+
+  <!-- id -->
+  <button style="border:none" id="uniqueBtn">Unique</button>
+
+  <span>this is a span</span>
+
+  <div class="firstDiv">
+    <p>ABC</p>
+    <p>ABC</p>
+    <p>ABC</p>
+  </div>
+
+  <div class="secondDiv">
+    <p>DEF</p>
+    <p>DEF</p>
+    <p>DEF</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* affect every sibling spans inside a div of class container with orange color */
+    div.container p ~ span,h1{
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span>Spansss</span>
+    <p>The para</p>
+    <span>Spansss</span>
+    <span>Spansss</span>
+    <h1>Heading</h1>
+  </div>
+</body>
+</html>

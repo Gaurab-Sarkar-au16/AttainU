@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex css</title>
+
+    <style>
+      /* multiple element slector */
+      p,button, h1{
+        color: green;
+      }
+
+      /* child selectors */
+      section p{
+        color: indigo;
+      }
+
+      section p span{
+        color: hotpink;
+      }
+
+      /* immediate child selector */
+      /* grand children wont be selected, only the first level child of element */
+      section > p{
+        background-color: lawngreen;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <p>this is a <span>SPAN</span> of para of section</p>
+    </section>
+
+    <section>
+      <p>this para is of section</p>
+      <p>this para is of section</p>
+      <p>this para is of section</p>
+    </section>
+
+    <button class="btn">Default</button>
+    <button class="btn btn-warning">Warning</button>
+    <button class="btn btn-danger">Danger</button>
+
+    <p>This is a paragraph</p>
+    <p>This is a paragraph</p>
+    <p>This is a paragraph</p>
+
+  </body>
+</html>

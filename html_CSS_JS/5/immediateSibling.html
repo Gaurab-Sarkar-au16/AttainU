@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immediate Sibling</title>
+
+  <style>
+    /* affect the first paragraph sibling of span with astyle of 20px top margin */
+    span + p {
+      color: orangered;
+    }
+
+    /* nth child */
+    p span:nth-child(1){
+      background-color: lightsalmon;
+    }
+  </style>
+</head>
+<body>
+  <span>this is a span <p>and p</p></span>
+  <!-- <div>this is a div</div> -->
+  <p>this is a p</p>
+  <p>this is a p</p>
+  <p>this is a p</p>
+
+  <p>this is a <span>SPAN</span> inside <span>p</span></p>
+</body>
+</html>
