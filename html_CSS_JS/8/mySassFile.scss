@@ -3,7 +3,16 @@ $boxColor: green;
 
 $fontSize: 20px;
 
+// css3 variables
+html{
+  --blue: blue;
+  --white: white;
+}
 
+:root{
+  --crimson: crimson;
+  --red: red;
+}
 
 .box-container {  
   background-color: $containerColor;

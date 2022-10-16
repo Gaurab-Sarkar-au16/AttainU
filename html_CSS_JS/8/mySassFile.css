@@ -1,3 +1,13 @@
+html {
+  --blue: blue;
+  --white: white;
+}
+
+:root {
+  --crimson: crimson;
+  --red: red;
+}
+
 .box-container {
   background-color: crimson;
   padding: 5px;
