@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gradient</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient</title>
 
-  <style>
-    .box{
-      height: 50px;
-      /* background-image: linear-gradient(to right,red, yellow, blue); */
-      background-image: linear-gradient(to left,red, yellow, blue);
-    }
-  </style>
-</head>
-<body>
-  <div class="box"></div>
-</body>
+    <style>
+      .box {
+        height: 100px;
+        width: 100px;
+        /* background-image: linear-gradient(to right,red, yellow, blue); */
+        background-image: linear-gradient(90deg, red 20%, yellow 40%, blue);
+        /* background-image: radial-gradient( red, yellow, blue); */
+      }
+      .box2 {
+        height: 100px;
+        width: 100px;
+        /* background-image: radial-gradient(closest-side, red, yellow, blue); */
+        background-image: radial-gradient(farthest-side, red, yellow, blue);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box2"></div>
+  </body>
 </html>
