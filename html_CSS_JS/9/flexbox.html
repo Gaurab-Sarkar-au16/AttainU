@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+
+    <style>
+      .box-container {
+        background-color: yellow;
+        padding: 5px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: end; */
+
+      }
+      .box {
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+        background-color: tomato;
+      }
+      .box-1 {
+        height: 30px;
+      }
+      .box-3 {
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box-container">
+      <div class="box box-1">1</div>
+      <div class="box box-2">2</div>
+      <div class="box box-3">3</div>
+      <div class="box box-4">4</div>
+    </div>
+  </body>
+</html>
