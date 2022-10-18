@@ -12,8 +12,11 @@
         padding: 5px;
         height: 500px;
         display: flex;
-        flex-direction: column;
-        /* justify-content: end; */
+        flex-direction: row;
+        /* row, column, row-reverse, column-reverse */
+
+        justify-content: center;
+        align-items: baseline;
 
       }
       .box {
@@ -24,10 +27,17 @@
       }
       .box-1 {
         height: 30px;
+        order: 3;
+      }
+      .box-2{
+        order: 1;
       }
       .box-3 {
         height: 80px;
+        align-self: center;
+        order: 2;
       }
+
     </style>
   </head>
   <body>
