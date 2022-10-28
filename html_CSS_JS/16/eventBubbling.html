@@ -8,7 +8,8 @@
   <style>
     .container{
       background-color: indianred;
-      padding: 5px;
+      padding: 5px
+      ;
     }
     .box{
       height: 50px;
@@ -34,6 +35,7 @@
 
     box.addEventListener('click', function(e) {
       console.log(e);
+      e.stopPropagation()
       console.log('clicked box')
     })
 
