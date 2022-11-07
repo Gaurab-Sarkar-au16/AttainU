@@ -4,7 +4,7 @@ var inputField = document.getElementById('input-field')
 var addTodoButton = document.getElementById('add-todo')
 
 function removeItem(e){
-  console.log(e.target.parentElement)
+  e.target.parentElement.remove()
 }
 
 function addItemToList(event) {
