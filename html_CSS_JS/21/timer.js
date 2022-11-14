@@ -25,3 +25,13 @@ var timerid = setInterval(function(){
   }
 },2000)
 
+console.log('test')
+
+var timerid2 = setInterval(function(){
+  if (count < 5){
+    add(10,10)
+    count++
+  }else{
+    clearInterval(timerid2)
+  }
+},5000)
