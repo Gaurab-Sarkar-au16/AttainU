@@ -121,3 +121,24 @@ const person = {
   profession: 'coder',
 }
 
+function greeter(personObj){
+  // const fName = personObj.firstName
+  // const lName = personObj.lastName
+
+  //destructuring object
+  const {firstName, lastName} = personObj
+
+  const {} = 
+  console.log(`Hello, I am ${firstName.toUpperCase()} ${lastName.toUpperCase()}`)
+
+  //destructuring array
+  const array = [1,2,3]
+  let [firstItem, ,thirdItem] = array
+  console.log(firstItem, thirdItem)
+  
+}
+
+
+
+greeter(person)
+
