@@ -1,0 +1,8 @@
+{
+  "name": "Vijay",
+  "age": 29,
+  "fav": ["meditation","murli"],
+  "nest": {
+    "key1": 123
+  }
+}
