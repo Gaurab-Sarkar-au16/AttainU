@@ -2,9 +2,10 @@ const myPromise = new Promise(function(resolve, reject){
   
   setTimeout(function(){
     //fetching some number
-    const number = 9
+    const number = 12
     if(number%2 === 0 ){
-      resolve()
+      const cubeNumber = cube(number)
+      resolve(cubeNumber)
     }else{
       reject()
     }
@@ -12,8 +13,9 @@ const myPromise = new Promise(function(resolve, reject){
 
 })
 
-myPromise.then(function(){
+myPromise.then(function(cube){
   console.log('Promise fulfilled')
+  console.log(cube)
 })
 
 myPromise.catch(function(){
@@ -21,3 +23,8 @@ myPromise.catch(function(){
 })
 
 console.log('This is logged immediately')
+
+
+function cube(num1){
+ return num1**3
+}
