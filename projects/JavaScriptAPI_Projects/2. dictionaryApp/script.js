@@ -3,12 +3,20 @@ const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const result = document.getElementById("result");
 const sound = document.getElementById("sound");
 const btn = document.getElementById("search-btn");
-
 var input = document.getElementById("inp-word")
-inpo
+
+input.addEventListener("keypress", function(event){
+  if(event.key === "Enter"){
+    displayData()
+  }
+})
 
 btn.addEventListener("click", () => {
-  let inpWord = document.getElementById("inp-word").value;
+  displayData()
+});
+
+function displayData(){
+  let inpWord = input.value;
   // console.log(inpWord)
 
   fetch(`${url+inpWord}`)
@@ -42,8 +50,9 @@ btn.addEventListener("click", () => {
       result.innerHTML = `<h3 class="error">Couldn't find the word</h3>`
       console.log(error)
     })
-});
+}
 
 function playSound(){
   sound.play()
 }
+
