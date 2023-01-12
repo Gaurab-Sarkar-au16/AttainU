@@ -13,11 +13,21 @@ function Popular() {
     const data = await api.json()
     // console.log(api)
     // console.log(data)
-    setP
+    setPopular(data.recipes)
   }
 
   return (
-    <div>Popular</div>
+    <div>
+      {
+        popular.map(recipe=>{
+          return(
+            <div>
+              <p>{recipe.title}</p>
+            </div>
+          )
+        })
+      }
+    </div>
   )
 }
 
