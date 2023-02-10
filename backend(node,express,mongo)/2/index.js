@@ -1,25 +1,14 @@
 //Basics of express
-const express = require('express')
-const {square,cube} = require('./math')
+const express = require("express");
+const mathRouter = require('./routes/maths')
+const userRouter = require('./routes/users')
 
-const app = express()
+const app = express();
 
-app.get('/',(req,res)=>{
-  res.send('Welcome, choose to square or to cube')
-})
+app.get("/", (req, res) => {
+  res.send("Welcome, choose to square or to cube");
+});
+app.use('/math', mathRouter)
+app.use('/user', userRouter)
 
-app.get('/square/:num', (req,res)=>{
-  let {num} = req.params
-  num = Number(num)
-  const sq = square(num)
-  res.send(`${sq}`)
-})
-
-app.get('/cube/:num', (req,res)=>{
-  let {num} = req.params
-  num = Number(num)
-  const cu = cube(num)
-  res.send(`${cu}`)
-})
-
-app.listen(3100,()=>console.log('server started'))
+app.listen(3100, () => console.log("server started"));
