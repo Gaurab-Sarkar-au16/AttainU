@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { Link } from "react-router-dom";
 
 function Veggie() {
   const [veggie, setVeggie] = useState([]);
@@ -11,19 +12,27 @@ function Veggie() {
   }, []);
 
   const getVeggie = async () => {
-    const check = localStorage.getItem("veggie");
-    if (check) {
-      setVeggie(JSON.parse(check));
-    } else {
-      const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`
-      );
-      const data = await api.json();
-      // console.log(api)
-      localStorage.setItem("veggie", JSON.stringify(data.recipes));
-      setVeggie(data.recipes);
-      console.log(data.recipes);
-    }
+    // const check = localStorage.getItem("veggie");
+    // if (check) {
+    //   setVeggie(JSON.parse(check));
+    // } else {
+    //   const api = await fetch(
+    //     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`
+    //   );
+    //   const data = await api.json();
+    //   // console.log(api)
+    //   localStorage.setItem("veggie", JSON.stringify(data.recipes));
+    //   setVeggie(data.recipes);
+    //   console.log(data.recipes);
+    // }
+    const api = await fetch(
+      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`
+    );
+    const data = await api.json();
+    // console.log(api)
+    localStorage.setItem("veggie", JSON.stringify(data.recipes));
+    setVeggie(data.recipes);
+    console.log(data.recipes);
   };
   return (
     <div>
@@ -41,11 +50,13 @@ function Veggie() {
           {veggie.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Card>
-                  <p>{recipe.title}</p>
-                  <img src={recipe.image} alt={recipe.title} />
-                  <Gradient />
-                </Card>
+                <Link to={"/recipe/" + recipe.id}>
+                  <Card>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <Gradient />
+                  </Card>
+                </Link>
               </SplideSlide>
             );
           })}
@@ -57,6 +68,9 @@ function Veggie() {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+  h3 {
+    margin-bottom: 2rem;
+  }
 `;
 
 const Card = styled.div`

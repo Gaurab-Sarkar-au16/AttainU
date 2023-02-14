@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { Link } from "react-router-dom";
 
 function Popular() {
   const [popular, setPopular] = useState([]);
@@ -12,18 +13,26 @@ function Popular() {
 
   const getPopular = async () => {
     const check = localStorage.getItem("popular");
-    if (check) {
-      setPopular(JSON.parse(check));
-    } else {
-      const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
-      );
-      const data = await api.json();
-      // console.log(api)
-      localStorage.setItem("popular", JSON.stringify(data.recipes));
-      console.log(data.recipes);
-      setPopular(data.recipes);
-    }
+    // if (check) {
+    //   setPopular(JSON.parse(check));
+    // } else {
+    //   const api = await fetch(
+    //     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
+    //   );
+    //   const data = await api.json();
+    //   // console.log(api)
+    //   localStorage.setItem("popular", JSON.stringify(data.recipes));
+    //   console.log(data.recipes);
+    //   setPopular(data.recipes);
+    // }
+    const api = await fetch(
+      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
+    );
+    const data = await api.json();
+    // console.log(api)
+    localStorage.setItem("popular", JSON.stringify(data.recipes));
+    console.log(data.recipes);
+    setPopular(data.recipes);
   };
 
   return (
@@ -42,11 +51,13 @@ function Popular() {
           {popular.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Card>
-                  <p>{recipe.title}</p>
-                  <img src={recipe.image} alt={recipe.title} />
-                  <Gradient />
-                </Card>
+                <Link to={"/recipe/" + recipe.id}>
+                  <Card>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <Gradient />
+                  </Card>
+                </Link>
               </SplideSlide>
             );
           })}
@@ -58,6 +69,9 @@ function Popular() {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+  h3 {
+    margin-bottom: 2rem;
+  }
 `;
 
 const Card = styled.div`
