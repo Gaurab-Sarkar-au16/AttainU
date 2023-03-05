@@ -51,30 +51,62 @@ mongoose.set("strictQuery", false);
 
 //different queries
 //=================
+// run();
+// async function run() {
+//   try {
+//     // const user = await User.findById("63f6436f37225ba1e933a60b")
+//     // const user = await User.find({name:"Vijay"})
+//     // const user = await User.findOne({name:"Vijay"})
+//     // const user = await User.exists({name:"Vijay"})
+//     // await User.deleteOne({name:"Vijay"})
+//     // await User.deleteMany({name:"Vijay"})
+
+//     //custom made mongoose query
+//     // const user = await User.where("name").equals("Vijay")
+//     // const user = await User.where("age").gt("12")
+//     // const user = await User.where("age").gt("12").where("name").equals("Vijay")
+//     // const user = await User.where("age").gt("12").lt("31").where("name").equals("Vijay")
+//     const user = await User.where("age")
+//       .gt("12")
+//       .where("name")
+//       .equals("Shraddha")
+//       .populate("bestFriend")
+//       .limit(1);
+//     // user[0].bestFriend = "63f656405523fb922c392530"
+//     // await user[0].save()
+//     console.log(user);
+//   } catch (e) {
+//     console.log(e.message);
+//   }
+// }
+
+//schema methods/virtuals
+//========================
+// run();
+// async function run() {
+//   try {
+//     // const user = await User.findOne({name:"Shraddha"})          
+//     // const user = await User.findByName("Shraddha")          
+//     // const user = await User.find().byName("Shraddha")
+//     const user = await User.findOne({ name: "Shraddha" })          
+//     console.log(user);
+//     console.log(user.namedEmail)
+//     // user.sayHi()
+//   } catch (e) {
+//     console.log(e.message);
+//   }
+// }
+
+//middleware
+//===========
 run();
 async function run() {
   try {
-    // const user = await User.findById("63f6436f37225ba1e933a60b")
-    // const user = await User.find({name:"Vijay"})
-    // const user = await User.findOne({name:"Vijay"})
-    // const user = await User.exists({name:"Vijay"})
-    // await User.deleteOne({name:"Vijay"})
-    // await User.deleteMany({name:"Vijay"})
-
-    //custom made mongoose query
-    // const user = await User.where("name").equals("Vijay")
-    // const user = await User.where("age").gt("12")
-    // const user = await User.where("age").gt("12").where("name").equals("Vijay")
-    // const user = await User.where("age").gt("12").lt("31").where("name").equals("Vijay")
-    const user = await User.where("age")
-      .gt("12")
-      .where("name")
-      .equals("Shraddha")
-      .populate("bestFriend")
-      .limit(1);
-    // user[0].bestFriend = "63f656405523fb922c392530"
-    // await user[0].save()
+    const user = await User.findOne({ name: "Shraddha" })          
     console.log(user);
+    await user.save()
+    console.log(user)
+    // user.sayHi()
   } catch (e) {
     console.log(e.message);
   }
