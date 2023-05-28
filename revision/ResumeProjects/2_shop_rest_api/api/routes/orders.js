@@ -32,4 +32,11 @@ router.delete('/:orderId', (req,res,next)=>{
     })
 })
 
+router.delete('/:orderId', (req,res,next)=>{
+    res.status(201).json({
+        mes:'Order deleted',
+        orderId: req.params.orderId
+    })
+})
+
 module.exports = router
